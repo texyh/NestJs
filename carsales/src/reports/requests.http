@@ -1,0 +1,27 @@
+@host = http://localhost:3000
+###
+POST {{host}}/reports HTTP/1.1
+Content-Type: application/json
+
+{
+   "make": "ford",
+   "model" : "mustang",
+   "mileage": 50000,
+   "year" :1982,
+   "price" : 20000,
+   "lat" :45,
+   "lng":45
+}
+
+###
+PATCH  {{host}}/reports/6 HTTP/1.1
+Content-Type: application/json
+
+{
+   "approved": true
+}
+
+###
+GET   {{host}}/reports?make=ford&model=mustang&lng=45&lat=45&mileage=20000&year=1981 HTTP/1.1
+Content-Type: application/json
+
